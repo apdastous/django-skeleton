@@ -1,6 +1,8 @@
+import datetime
 from random import choice
 
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def root(request):
@@ -23,4 +25,4 @@ def root(request):
 
     fortune = choice(messages)
 
-    return HttpResponse(fortune)
+    return render(request, 'root.html', {'fortune': fortune, 'datetime': datetime.datetime.now()})
