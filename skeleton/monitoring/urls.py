@@ -13,10 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.urls import re_path
 
 from monitoring import views
 
-urlpatterns = {
-    url(r'^ping', views.ping, name='ping'),
-}
+urlpatterns = [
+    re_path(r'^ping', views.ping, name='ping'),
+]

@@ -2,4 +2,4 @@ from django.http import HttpResponse
 
 
 def ping(request):
-    return HttpResponse('OK')
+    return HttpResponse(b'OK')
